@@ -59315,7 +59315,7 @@ module.exports = v4;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.RefKey = exports.Events = exports.State = exports.Outputs = exports.Inputs = void 0;
+exports.RefOverrideKey = exports.RefKey = exports.Events = exports.State = exports.Outputs = exports.Inputs = void 0;
 var Inputs;
 (function (Inputs) {
     Inputs["Key"] = "key";
@@ -59344,6 +59344,7 @@ var Events;
     Events["PullRequest"] = "pull_request";
 })(Events = exports.Events || (exports.Events = {}));
 exports.RefKey = "GITHUB_REF";
+exports.RefOverrideKey = "OVERRIDE_GITHUB_REF";
 
 
 /***/ }),
@@ -59865,6 +59866,8 @@ var __webpack_exports__ = {};
 var exports = __webpack_exports__;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+const constants_1 = __nccwpck_require__(9042);
+process.env[constants_1.RefKey] = process.env[constants_1.RefKey] || process.env[constants_1.RefOverrideKey];
 const restoreImpl_1 = __nccwpck_require__(2357);
 (0, restoreImpl_1.restoreRun)(true);
 

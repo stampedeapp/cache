@@ -26,3 +26,4 @@ export enum Events {
 }
 
 export const RefKey = "GITHUB_REF";
+export const RefOverrideKey = "OVERRIDE_GITHUB_REF";
